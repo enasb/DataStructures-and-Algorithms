@@ -19,12 +19,51 @@ arr[6] = 500 ;
 arr[7] = 88 ;
 arr[8] = 90 ;
 arr[9] = 0 ;
-
+nelems = 10 ;
 // ------------------------------------------
+// display items
 
-
-
+for ( int i=0 ; i<nelems ; i++) {
+  System.out.println(arr[i] + " ") ;
 }
 
+//---------------------------------------------
+// find item with key 66
+int key=66;
+int i ;
+for ( i=0 ; i<nelems ; i++) {
+  if(arr[i] == key) 
+    break;
+  }
+  
+  if(i == nelems) 
+          System.out.println("cannot find the item with key = " + key) ; 
+  else 
+         System.out.println("item found at index = " + i ) ; 
 
+// -------------------------------------------------
+// delete item with key 55
+key = 55 ;
+
+for(i=0 ; i<nelems ; i++) {
+    if(arr[i] == key) 
+        break ;
 }
+
+int j ;
+ for ( j=i ; j<nelems ; j++) {
+    arr[j] = arr[j+1] ;
+ }
+ 
+ nelems -- ;
+ 
+ // ---------------------------------------------------
+ // display items
+ for ( i=0 ; i<nelems ; i++) {
+  System.out.println(arr[i] + " ") ;
+}
+} // end main
+} // end class 
+
+
+
