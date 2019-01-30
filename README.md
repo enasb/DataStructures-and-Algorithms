@@ -1,72 +1,56 @@
-//DataStructures-and-Algorithms
-//chapter2 page41
-//Array.java 
+// LowArray.java 
+// page44
 
-class ArrayApp {
+class LowArray {
 
-public static void main(String[] args) {
-Long[] arr = new Long[100] ;
-int nelems = 0 ;
-
-//-------------------------------------
-arr[0] = 22 ;
-arr[1] = 33 ;
-arr[2] = 44 ;
-arr[3] = 11 ;
-arr[4] = 77 ;
-arr[5] = 10 ;
-arr[6] = 500 ;
-arr[7] = 88 ;
-arr[8] = 90 ;
-arr[9] = 0 ;
-nelems = 10 ;
-// ------------------------------------------
-// display items
-
-for ( int i=0 ; i<nelems ; i++) {
-  System.out.println(arr[i] + " ") ;
-}
-
-//---------------------------------------------
-// find item with key 66
-int key=66;
-int i ;
-for ( i=0 ; i<nelems ; i++) {
-  if(arr[i] == key) 
-    break;
+  private long[] a ;
+  
+  // constructor
+  public LowArray (int size) {
+    a= new long[size] ;
   }
   
-  if(i == nelems) 
-          System.out.println("cannot find the item with key = " + key) ; 
-  else 
-         System.out.println("item found at index = " + i ) ; 
+  //set value
+   public void setElem(int index , long val) {
+      a[index] = val ;
+   }
+   
+   // get value
+   public long getElem(int index){
+    return a[index] ; 
+   }
+   
+} // end of class LowArray
 
-// -------------------------------------------------
-// delete item with key 55
-key = 55 ;
-int f =0 ;
-
-for(i=0 ; i<nelems ; i++) {
-    if(arr[i] == key) {
-        f =1 ;
-        break ; }
+class LowArrayApp {
+    
+      public static void main() {
+      
+        LowArray arr = new LowArray(20) ;
+        int nelems = 0 ; // number of items in array
+        int j;            // loop variable 
         
-}
- if (f=1) {
-int j ;
- for ( j=i ; j<nelems ; j++) {
-    arr[j] = arr[j+1] ;
- }
-  nelems -- ;
- } else {System.out.println("item is not found") ; }
-
- // ---------------------------------------------------
- // display items
- for ( i=0 ; i<nelems ; i++) {
-  System.out.println(arr[i] + " ") ;
-}
-} // end main
-} // end class 
-
-
-
+        // ------------------------------------------------------------------
+        // insert 10 items
+        
+        arr.setElem(0,10);
+        arr.setElem(1,5);
+        arr.setElem(2,88);
+        arr.setElem(3,45);
+        arr.setElem(4,77);
+        arr.setElem(5,21);
+        arr.setElem(6,0);
+        arr.setElem(7,34);
+        arr.setElem(8,66);
+        arr.setElem(9,453);
+     
+        nelems = 10
+        
+        //---------------------------------------------------------------------
+        // display items
+        
+        for( j=0 ; j<nelems ; j++){
+          System.out.println(arr.getElem(j) + " ") ;
+        }
+      } // end of main
+} // end of LowArrayApp class
