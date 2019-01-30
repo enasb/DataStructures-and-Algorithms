@@ -44,19 +44,22 @@ for ( i=0 ; i<nelems ; i++) {
 // -------------------------------------------------
 // delete item with key 55
 key = 55 ;
+int f =0 ;
 
 for(i=0 ; i<nelems ; i++) {
-    if(arr[i] == key) 
-        break ;
+    if(arr[i] == key) {
+        f =1 ;
+        break ; }
+        
 }
-
+ if (f=1) {
 int j ;
  for ( j=i ; j<nelems ; j++) {
     arr[j] = arr[j+1] ;
  }
- 
- nelems -- ;
- 
+  nelems -- ;
+ } else {System.out.println("item is not found") ; }
+
  // ---------------------------------------------------
  // display items
  for ( i=0 ; i<nelems ; i++) {
